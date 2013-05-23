@@ -1,0 +1,83 @@
+
+import javax.swing.*;
+import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import javax.swing.JButton;
+import javax.swing.JFrame;
+
+
+
+
+public class frame extends JFrame implements ActionListener {
+    
+  private JButton ende ;
+    private JButton verlassen;
+      
+
+    
+      
+    public static void main (String[]args)  {
+		
+		
+		frame frame = new frame ("Endmenü");
+		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE); 
+		frame.setSize(400,400);
+		
+		frame.setLayout(null);
+		frame.setVisible(true);
+		
+		
+
+	}
+
+	public frame (String title) {
+
+	
+	   super(title);
+
+	   ende = new JButton ("Spiel neustarten");
+	   ende.setBounds (120,120,160,40); 
+	   ende.addActionListener(this);
+	   add(ende);
+	   
+	   verlassen = new JButton ("Spiel beenden");
+	   verlassen.setBounds (120,200,160,40); 
+	   verlassen.addActionListener(this);
+	   add(verlassen);
+	
+	}
+	
+
+   
+
+
+public void actionPerfomed(ActionEvent e) {
+	
+	if (e.getSource()== ende ){
+		 fenster() ;
+		  
+	  }
+
+	   if(e.getSource() == verlassen) {
+	       System.exit(0);
+	
+	
+	
+	
+	
+      }
+   }
+
+public static void fenster() {
+	   JFrame fenster = new JFrame("Neustart");
+	   fenster.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE) ;
+	   fenster.setSize(650,350);
+	   fenster.setVisible(true) ;
+	
+}
+
+
+	
+}
+
